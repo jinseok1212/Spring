@@ -26,6 +26,13 @@
 		</beans:property>
 	</beans:bean> -->
 	
-
-		
+	<!-- 뷰 리졸버 - 컨트롤러에서 반환받는 뷰의 경로를 합성해주는 역할 -->
+	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver"> 
+		<beans:property name="prefix" value="/WEB-INF/views/" />
+		<beans:property name="suffix" value=".jsp" />
+	</beans:bean>
+	
+	<!-- 정적자원 맵핑 resources/~~~ 요청이 들어오면,컨트롤러를 타지 않고 폴더로 연결 /resources/ -->
+	<resources location="/resources/" mapping="/resources/**"/>
+	
 </beans:beans>

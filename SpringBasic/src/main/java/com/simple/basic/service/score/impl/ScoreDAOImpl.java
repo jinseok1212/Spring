@@ -1,0 +1,27 @@
+package com.simple.basic.service.score.impl;
+
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+
+import org.springframework.stereotype.Repository;
+
+import com.simple.basic.command.ScoreVO;
+
+@Repository("y") //component-scan <--
+public class ScoreDAOImpl implements ScoreDAO {
+	
+	//DB
+	ArrayList<ScoreVO> list = new ArrayList<>();
+	
+	@Override
+	public void regist(ScoreVO vo) {
+		list.add(vo); //insert완료
+	}
+
+	@Override
+	public ArrayList<ScoreVO> getScore() {
+		
+		return list;
+	}
+
+}

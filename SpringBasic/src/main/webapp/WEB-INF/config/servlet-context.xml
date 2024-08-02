@@ -21,8 +21,10 @@
 	<!-- base-package 안에 들어있는 @Controller, @Service, @Repository, @Component 클래스를 bean자동 생성 -->
 	<context:component-scan base-package="com.simple.basic.*" />
 
-
-	
+	<!--  서비스 영역을 빈으로 생성 -->
+	<!-- 
+	<beans:bean id="scoreService" class="com.simple.basic.service.score.ScoreServiceImpl"/>
+	 -->
 	
 	
 	
