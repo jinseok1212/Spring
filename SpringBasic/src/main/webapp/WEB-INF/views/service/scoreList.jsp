@@ -10,11 +10,16 @@
 </head>
 <body>
 
-	<c:forEach var="vo" items="${list }">
-		${vo.name }<br>
-		${vo.kor }<br>
-		${vo.eng }<br>
+	<c:forEach var="vo" items="${list }" varStatus="a">
+		${a.index }
+		<%-- ${a.count } --%>
+		
+		${vo.name }
+		${vo.kor }
+		${vo.eng }
 		${vo.math }
+		<button type="button" onclick="location.href='deleteScore?sno=${vo.sno}';">삭제</button>
+		<br>
 	</c:forEach>
 	
 	<a href="scoreRegist">추가등록하기</a>

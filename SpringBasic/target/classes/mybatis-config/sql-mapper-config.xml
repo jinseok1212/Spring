@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+  <settings>
+    <setting name="mapUnderscoreToCamelCase" value="true"/> 
+  </settings>
+
+  <!-- db정보는 bean주입으로 들어감.. -->
+  <!-- mapper위치도 bean주입으로 들어감 -->
+  
+  <!-- type클래스를 alias 단축명으로 사용함 -->
+  	<typeAliases>
+	  <typeAlias type="com.simple.basic.command.ScoreVO" alias="ScoreVO"/>
+	
+    	<typeAlias alias="BoardVO" type="com.simple.basic.command.BoardVO"/>
+  </typeAliases>
+</configuration>

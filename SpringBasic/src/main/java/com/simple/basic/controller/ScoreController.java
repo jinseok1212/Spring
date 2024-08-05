@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.simple.basic.command.ScoreVO;
 import com.simple.basic.service.score.ScoreService;
 import com.simple.basic.service.score.ScoreServiceImpl;
+import org.springframework.web.bind.annotation.RequestParam;
+
 
 @Controller
 @RequestMapping("/service")
@@ -53,5 +55,15 @@ public class ScoreController {
 		
 		return "service/scoreResult"; //결과화면
 	}
+	
+	//삭제요청
+	@RequestMapping("/deleteScore")
+	public String deleteScore(@RequestParam("sno") int sno) {
+		
+		scoreService.delete(sno);
+		
+		return "redirect:/service/scoreList";//다시 목록화면으로
+	}
+	
 	
 }

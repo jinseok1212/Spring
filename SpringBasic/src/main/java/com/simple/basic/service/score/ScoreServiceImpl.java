@@ -12,19 +12,32 @@ import com.simple.basic.service.score.impl.ScoreDAO;
 @Service("x") //반드시 component-scan에 의하여 읽혀야 함
 public class ScoreServiceImpl implements ScoreService{
 	
-	@Autowired
-	@Qualifier("y")
-	ScoreDAO scoreDAO;
+//	@Autowired
+//	@Qualifier("y")
+//	ScoreDAO scoreDAO;
 
+	@Autowired
+	private ScoreMapper scoreMapper;
+	
 	@Override
 	public void regist(ScoreVO vo) {
-		scoreDAO.regist(vo);
+		System.out.println("regist메서드 동작");
+		scoreMapper.regist(vo);
+		
 	}
 
 	@Override
 	public ArrayList<ScoreVO> getScore() {
+		System.out.println("getScore메서드 동작");
 		
-		return scoreDAO.getScore();
+		return scoreMapper.getScore();
+	}
+
+	@Override
+	public void delete(int sno) {
+		System.out.println("delete메서드 동작");
+		
+		scoreMapper.delete(sno);
 	}
 
 }
